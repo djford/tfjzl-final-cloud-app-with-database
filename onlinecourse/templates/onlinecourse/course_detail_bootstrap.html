@@ -59,7 +59,7 @@
                         <div class="card mt-1">
                             <h5>{{ question.content }}</h5>
                         </div>
-                        { % csrf_token % }
+                        {% csrf_token %}
                         <div class="form-group">
                             {% for choice in question.choice_set.all %}
                             <div class="form-check">
@@ -68,7 +68,7 @@
                                         id="{{choice.id}}" value="{{choice.id}}">{{ choice.content }}
                                 </label>
                             </div>
-                            {% enfor %}
+                            {% endfor %}
                         </div>
                         {% endfor %}
                         <input class="btn btn-success btn-block" type="submit" value="submit">
